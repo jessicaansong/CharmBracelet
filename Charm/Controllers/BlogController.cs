@@ -17,7 +17,8 @@ namespace NewPortfolio.Controllers
         // GET: Blog
         public ActionResult Index()
         {
-            return View(db.Posts.ToList());
+            return PartialView(db.Posts.ToList());
+            //return View(db.Posts.ToList());
         }
 
         // GET: Blog/Details/5
