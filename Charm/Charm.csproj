@@ -239,6 +239,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="JQueryDotDotDot\Ellipsis.js" />
+    <Content Include="JQueryDotDotDot\jquery.dotdotdot.js" />
     <Content Include="MyUploads\resized_ProfessionalPhoto.png" />
     <Content Include="PortfolioTemplate\Documentation\Template Doc Assets\theme-preview.jpg" />
     <Content Include="PortfolioTemplate\Documentation\Template Doc CSS\main.css" />

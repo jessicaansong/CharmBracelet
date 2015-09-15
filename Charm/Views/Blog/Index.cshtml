@@ -26,13 +26,16 @@
             <hr>
             <img class="img-responsive" src="http://placehold.it/900x300" alt="">
             <hr>
-            <p>@Html.Raw(item.Blog)</p>
-                }
-            <a class="btn btn-group-sm" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+            <div class="abc">
+                <p>@Html.Raw(item.Blog)</p>
+            </div> 
+                <!--jquery ellipsis class-->
+            }
+            @*<a class="btn btn-group-sm" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>*@
             <hr>
            
         <!-- Blog Sidebar Widgets Column -->
-        <div class="col-md-4">
+        @*<div class="col-md-4">
             <!-- Blog Search Well -->
             <div class="well">
                 <h4>Blog Search</h4>
@@ -92,10 +95,27 @@
                 <h4>Side Widget Well</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
             </div>
-        </div>
+        </div>*@
     </div>
     <!-- /.row -->
     <hr>
     </div>
 </div>
 <!-- /.container -->
+
+@section scripts{
+<script src="/JQueryDotDotDot/jquery.dotdotdot.js"></script>
+<script type="text/javascript">
+    $(window).load(function () {
+        $('.backstretch').remove();
+        //console.log("In document ready");
+        $(".abc").dotdotdot({
+            ellipsis: '...',
+            wrap: 'word',
+            watch: true,
+            height: 50,
+            maxHeight: 50
+        });
+    });
+</script>
+}

@@ -182,8 +182,21 @@
 
 
     @*@Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)*@
+    @Scripts.Render("~/bundles/bootstrap")*@
+    @*<script src="~/JQueryDotDotDot/jquery.dotdotdot.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log("In document ready");
+            $(".abc").dotdotdot({
+                ellipsis: '...',
+                wrap: 'word',
+                watch: true,
+                height: 50,
+                maxHeight: 50
+            });
+        });
+    </script>*@
+    @RenderSection("scripts", required: false)
 
 </body>
 </html>
