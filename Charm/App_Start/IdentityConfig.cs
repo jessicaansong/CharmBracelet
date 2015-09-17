@@ -10,9 +10,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using NewPortfolio.Models;
+using Charm.Models;
 
-namespace NewPortfolio
+namespace Charm
 {
     public class EmailService : IIdentityMessageService
     {

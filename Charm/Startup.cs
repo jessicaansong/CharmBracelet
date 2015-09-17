@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(NewPortfolio.Startup))]
-namespace NewPortfolio
+[assembly: OwinStartupAttribute(typeof(Charm.Startup))]
+namespace Charm
 {
     public partial class Startup
     {

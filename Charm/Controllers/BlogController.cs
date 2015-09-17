@@ -6,9 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using NewPortfolio.Models;
+using Charm.Models;
 
-namespace NewPortfolio.Controllers
+namespace Charm.Controllers
 {
     public class BlogController : Controller
     {

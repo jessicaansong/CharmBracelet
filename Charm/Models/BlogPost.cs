@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 
-namespace NewPortfolio.Models
+namespace Charm.Models
 {
     public class BlogPost
     {

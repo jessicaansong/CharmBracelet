@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 
-namespace NewPortfolio.Models
+namespace Charm.Models
 {
     public class Comment
     {

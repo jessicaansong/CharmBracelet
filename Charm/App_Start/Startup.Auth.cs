@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using NewPortfolio.Models;
+using Charm.Models;
 
-namespace NewPortfolio
+namespace Charm
 {
     public partial class Startup
     {

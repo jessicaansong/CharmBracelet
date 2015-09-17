@@ -48,7 +48,8 @@
 	top:50%;
 	left:50%;
 	margin:-32px 0 0 -32px;
-	background: url('../assets/preloader.gif') no-repeat;
+    background: url(/PortfolioTemplate/HTML/TemplateHTMLAssets/preloader.gif)
+	/*background: url('../assets/preloader.gif') no-repeat;*/
 }
 
 /*---------------------------

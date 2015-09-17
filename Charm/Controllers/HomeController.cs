@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace NewPortfolio.Controllers
+namespace Charm.Controllers
 {
     public class HomeController : Controller
     {

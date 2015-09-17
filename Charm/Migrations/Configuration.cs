@@ -1,18 +1,18 @@
-namespace NewPortfolio.Migrations
+namespace Charm.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<NewPortfolio.Models.BlogPostDBContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Charm.Models.BlogPostDBContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(NewPortfolio.Models.BlogPostDBContext context)
+        protected override void Seed(Charm.Models.BlogPostDBContext context)
         {
             //  This method will be called after migrating to the latest version.
 

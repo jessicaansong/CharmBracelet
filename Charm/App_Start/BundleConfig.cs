@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace NewPortfolio
+namespace Charm
 {
     public class BundleConfig
     {

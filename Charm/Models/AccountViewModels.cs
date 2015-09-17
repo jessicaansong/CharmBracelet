@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace NewPortfolio.Models
+namespace Charm.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
