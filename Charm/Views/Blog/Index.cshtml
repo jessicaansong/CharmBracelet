@@ -16,32 +16,38 @@
                 Blog
             </h1>
 
-            <!-- Blog Entry -->
+            <div class="move"></div>
             @foreach (var item in Model)
             {  
-            <h2>
-                @Html.DisplayFor(ModelItem=> item.Title)
-            </h2>
-            <p>
-                by Jessica Ansong
-            </p>
-            <p><span class="glyphicon glyphicon-time"></span> Posted on @Html.DisplayFor(modelItem=>item.Created)</p>
-            @*<hr />*@
-    <div class="abc">
-        <p>
-            @Html.Raw(item.Blog)
+                <h2>
+                     @Html.DisplayFor(ModelItem=> item.Title)
+                </h2><!--/title ends-->
+                
+                        <p>
+                            by Jessica Ansong Posted on @Html.DisplayFor(modelItem => item.Created)
+                       </p> <!--/blog ends here-->
+                
+                    
+                            <div class="abc">
+                                @Html.Raw(item.Blog)
+                            </div>
 
-            <button type="button" class="btn btn-default" onclick="location.href='@Url.Action("Details", new { item.Slug})'">Read More</button>
-        </p>
-    </div>
+                            <button type="button" class="btn btn-default" onclick="location.href='@Url.Action("Details", new { item.Slug})'">Read More</button>
+
+                <div class="move"></div>
+                <hr />
+                <div class="move"></div>
             }
-           
-    </div>
+
+
+
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))           
+    </div><!--/blog column ends here-->
     <!-- /.row -->
     <hr>
       
-    </div>
-</div>
+    </div><!--/div row ends here-->
+</div><!--/container ends here-->
 <!-- /.container -->
 
 @section scripts{
@@ -65,6 +71,6 @@
 }
 
 <div class="col-sm-8">
-    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
 </div>
 
