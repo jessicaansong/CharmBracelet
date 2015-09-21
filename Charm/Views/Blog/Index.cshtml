@@ -1,4 +1,7 @@
-﻿@model IEnumerable<Charm.Models.BlogPost>
+﻿@using PagedList;
+@using PagedList.Mvc;
+
+@model PagedList<Charm.Models.BlogPost>
 
 @{
     ViewBag.Title = "Index";

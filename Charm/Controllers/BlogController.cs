@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Charm.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace Charm.Controllers
 {
@@ -15,11 +17,16 @@ namespace Charm.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Blog
-        public ActionResult Index()
+        public ActionResult Index(int ? page, string Query)
         {
-            //return PartialView(db.Posts.ToList());
-            return View(db.Posts.ToList());
-        }
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);   
+            var p = db.Posts.AsQueryable();
+            if (!String.IsNullOrEmpty(Query))
+            {
+                p = db.Posts.Where(s=>s.Title.Contains(Query)) || s.Blog.Contains(Query);
+            }   
+               return View(p.OrderByDescending(x => x.Created).ToPagedList(pageNumber, pageSize));
 
         // GET: Blog/Details/5
         public ActionResult Details(int? id)
