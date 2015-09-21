@@ -26,9 +26,11 @@
         =============================================== -->
     <!--===========ADDED CSS FILES===================-->
     @Styles.Render("~/Content/css")
+    <link href="/Content/PagedList.css" rel="stylesheet" type="text/css" />
     <link href="/PortfolioTemplate/HTML/TemplateHTMLCSS/flexslider.css" rel="stylesheet" />
     @*<link href="/PortfolioTemplate/HTML/TemplateHTMLCSS/font-awesome.min.css" rel="stylesheet" />*@
     <link href="/PortfolioTemplate/HTML/TemplateHTMLCSS/designr-theme-cyan2.css" rel="stylesheet" />
+    
     
 
     <!-- ==============================================
@@ -54,16 +56,16 @@
 
 </head>
 
-<body data-spy="scroll" data-target="#main-nav" data-offset="200">
+<body >
 
     <!--=== PAGE PRELOADER ===-->
-    <div id="page-loader"><span class="page-loader-gif"></span></div>
+    @*<div id="page-loader"><span class="page-loader-gif"></span></div>*@
 
     <!-- ==============================================
     MAIN NAV
     =============================================== -->
     @*<div id="main-nav" class="navbar navbar-fixed-top">*@
-    <div id="main-nav" class="navbar">
+    <div id="main-nav" class="navbar navbar-fixed-top scrolled">
         <div class="container">
 
             <div class="navbar-header">
@@ -73,7 +75,12 @@
                 </button>
 
                 <!-- ======= LOGO ========-->
-                <a class="navbar-brand scrollto" href="#home">Jessica Ansong<br><span>.NET Developer</span></a>
+                @*<a class="navbar-brand scrollto" href="@Url.Action("Index","Home"')">Jessica Ansong<br><span>.NET Developer</span></a>*@
+                <a  class="navbar-brand" href="@Url.Action("Index","Home")">
+                    Jessica Ansong
+                    <br />
+                    <span>.NET Developers</span>
+                </a>
                 <!-- <a class="navbar-brand scrollto ir-logo" href="#">JOHN DOE<br><span>UI Designer</span></a> -->
 
             </div>
@@ -148,22 +155,22 @@
 
 
     <!--=====================ADDED SCRIPTS==================================-->
-    <script src="/PortfolioTemplate/HTML/TemplateHTMLJS/jquery.scrollto.js"></script>
+    @*<script src="/PortfolioTemplate/HTML/TemplateHTMLJS/jquery.scrollto.js"></script>*@
     <script src="/PortfolioTemplate/HTML/TemplateHTMLJS/jquery.flexslider.js"></script>
 
     <!--====================JUST ADDED 9/13/15=my works section links==============================-->
     @*<script src="~/PortfolioTemplate/Documentation/Template Doc JS/bootstrap.js"></script>*@
-    <script src="~/PortfolioTemplate/HTML/TemplateHTMLJS/libs/bootstrap.js"></script>
+    <script src="/PortfolioTemplate/HTML/TemplateHTMLJS/libs/bootstrap.js"></script>
     @*<script src="~/PortfolioTemplate/Documentation/Template Doc JS/bootstrap.min.js"></script>*@
     <!--===============================================================================-->
 
     <script src="/PortfolioTemplate/HTML/TemplateHTMLJS/twitterFetcher_v10_min.js"></script>
     <script src="/PortfolioTemplate/HTML/TemplateHTMLJS/jquery.masonry.min.js"></script>
-    <script src="/PortfolioTemplate/HTML/TemplateHTMLJS/waypoints.min.js"></script>
+    @*<script src="/PortfolioTemplate/HTML/TemplateHTMLJS/waypoints.min.js"></script>*@
     <script src="/PortfolioTemplate/HTML/TemplateHTMLJS/jquery.easypiechart.min.js"></script>
     <script src="/PortfolioTemplate/HTML/TemplateHTMLJS/jquery.backstretch.js"></script>
     <script src="/PortfolioTemplate/HTML/TemplateHTMLJS/contact.js"></script>
-    <script src="/PortfolioTemplate/HTML/TemplateHTMLJS/designr.js"></script>
+    @*<script src="/PortfolioTemplate/HTML/TemplateHTMLJS/designr.js"></script>*@
 
 
     <!---======Other Added JS================-->

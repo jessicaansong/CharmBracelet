@@ -17,30 +17,34 @@ namespace Charm.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Blog
-        public ActionResult Index(int ? page, string Query)
+        public ActionResult Index(int? page, string Query)
         {
             int pageSize = 3;
-            int pageNumber = (page ?? 1);   
+            int pageNumber = (page ?? 1);
             var p = db.Posts.AsQueryable();
             if (!String.IsNullOrEmpty(Query))
             {
-                p = db.Posts.Where(s=>s.Title.Contains(Query)) || s.Blog.Contains(Query);
-            }   
-               return View(p.OrderByDescending(x => x.Created).ToPagedList(pageNumber, pageSize));
+                p = db.Posts.Where(s => s.Title.Contains(Query) || s.Blog.Contains(Query));
+            }
+            return View(p.OrderByDescending(x => x.Created).ToPagedList(pageNumber, pageSize)); //This command tells it to extract the information from the database.
+        }
 
         // GET: Blog/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(string slug)
         {
-            if (id == null)
+            if (string.IsNullOrWhiteSpace(slug))
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BlogPost blogPost = db.Posts.Find(id);
+            BlogPost blogPost = db.Posts.FirstOrDefault(p=> p.Slug == slug);
+            ViewBag.PostList = db.Posts.ToList();
+
             if (blogPost == null)
             {
                 return HttpNotFound();
             }
-            return View(blogPost);
+         return View(blogPost);
+         
         }
 
         // GET: Blog/Create
