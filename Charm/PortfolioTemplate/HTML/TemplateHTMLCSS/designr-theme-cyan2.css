@@ -115,6 +115,9 @@ h2 {
     margin-bottom: 25px;
 }
 
+.remove-space{
+    ,margin-bottom: 5px;
+}
 
 .move
 {
@@ -207,17 +210,6 @@ body {
 	-webkit-transition:background-color 0.2s ease-out;
 	transition:background-color 0.2s ease-out;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 .btn-theme:hover{
