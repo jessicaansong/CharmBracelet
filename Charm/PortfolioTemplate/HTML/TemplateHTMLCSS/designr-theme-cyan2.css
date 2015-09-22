@@ -111,20 +111,35 @@ h2 {
     text-transform:uppercase;
 }
 
+.btwnbyline{
+    margin-bottom: 25px;
+}
+
+
 .move
 {
     margin-bottom:50px;
 
 }
-
+/*Created 9/22/15*/
+p.byline{
+    margin-top: 15px;
+    font-size:16px;
+    line-height:16px;
+    font-weight:300;
+    letter-spacing:0.01em;
+    margin-bottom:30px;
+}
 
 p {
     font-size:18px;
-    line-height:24px;
+    line-height:30px;
     font-weight:300;
     letter-spacing:0.01em;
     margin-bottom:20px;
 }
+
+
 
 a,
 a:hover,
@@ -178,6 +193,32 @@ body {
 	-webkit-transition:background-color 0.2s ease-out;
 	transition:background-color 0.2s ease-out;
 }
+
+/*Created 9.22.15*/
+.btn-theme2{
+	color:#fff;
+	background-color:#74c7d5;
+	padding:7px 10px;
+	font-size:14px;
+	font-weight:300;
+	text-transform:uppercase;
+	border:none;
+	border-radius:0;
+	-webkit-transition:background-color 0.2s ease-out;
+	transition:background-color 0.2s ease-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .btn-theme:hover{
 	cursor:pointer;

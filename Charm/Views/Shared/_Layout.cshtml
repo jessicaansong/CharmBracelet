@@ -79,7 +79,7 @@
                 <a  class="navbar-brand" href="@Url.Action("Index","Home")">
                     Jessica Ansong
                     <br />
-                    <span>.NET Developers</span>
+                    <span>.NET Developer</span>
                 </a>
                 <!-- <a class="navbar-brand scrollto ir-logo" href="#">JOHN DOE<br><span>UI Designer</span></a> -->
 
@@ -129,17 +129,19 @@
                 <div class="col-sm-6 left-col">
                     <h1 class="small-logo">Jessica Ansong<br><span>.NET Developer</span></h1>
                     <ul class="footer-nav">
-                        <li><a class="scrollto" href="#home">Home</a></li>
-                        <li><a class="scrollto" href="#services">Services</a></li>
-                        <li><a class="scrollto" href="#portfolio">Portfolio</a></li>
+                        @*<li><a class="scrollto" href="#home">Home</a></li>*@
+                        <li><a class="scrollto" href="#services">My Experience</a></li>
+                        <li><a class="scrollto" href="#about">About Me</a></li>
+                        <li><a class="scrollto" href="#portfolio">My Works</a></li>
                         <li><a class="scrollto" href="#contact">Contact</a></li>
+                        <li><a href="@Url.Action("Index", "Blog")">Blog</a></li>
                     </ul>
-                    <p>&copy;Copyright 2013 / All Rights Reserved</p>
+                    <p>Copyright &copy; 2015 Jessica Ansong. All Rights Reserved.</p>
                 </div>
 
                 <div class="col-sm-6 right-col">
                     <h2>Who Am I?</h2>
-                    <p>I'm a .NET developer with expertise in C#, JavaScript, JQuery, HTML5, MVC5, and Bootstrap. I am currently enrolled the Coder Foundry's .NET bootcamp.</p>
+                    <p>I'm a .NET developer with expertise in C#, JavaScript, JQuery, HTML5, MVC5, and Bootstrap. I am currently enrolled in the Coder Foundry's .NET bootcamp.</p>
                 </div>
 
             </div><!-- End row -->

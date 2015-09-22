@@ -23,16 +23,18 @@
                      @Html.DisplayFor(ModelItem=> item.Title)
                 </h2><!--/title ends-->
                 
-                        <p>
-                            by Jessica Ansong Posted on @Html.DisplayFor(modelItem => item.Created)
-                       </p> <!--/blog ends here-->
-                
-                    
+               
+                        <p class="byline">
+                            By Jessica Ansong on @Html.DisplayFor(modelItem => item.Created)
+                       </p> <!--/blog byline-->
+
+                <div class="btwnbyline">
+                </div>
                             <div class="abc">
-                                @Html.Raw(item.Blog)
+                                <p>  @Html.Raw(item.Blog)</p>
                             </div>
 
-                            <button type="button" class="btn btn-default" onclick="location.href='@Url.Action("Details", new { item.Slug})'">Read More</button>
+                            <button type="button" class="btn-theme2" onclick="location.href='@Url.Action("Details", new { item.Slug})'">Read More</button>
 
                 <div class="move"></div>
                 <hr />
@@ -41,7 +43,7 @@
 
 
 
-            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))           
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
     </div><!--/blog column ends here-->
     <!-- /.row -->
     <hr>
