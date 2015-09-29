@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<section id="contact">
+
+    <div class="container">
+
+        @*<h1 class="section-title scrollimation scale-in">Keep in <span>Touch</span> with me</h1>*@
+        <h1 class="section-title">Keep in <span>Touch</span> with me</h1>
+
+        <div class="row">
+
+            @*<div class="col-sm-5 contact-info scrollimation fade-right">*@
+            <div class="col-sm-5 contact-info ">
+
+
+                    <p>If you are looking for someone with my skillset, please contact me.</p>
+
+                    <address>
+                        Jessica Ansong<br>
+                        1231 Shields Rd, Ste 5<br>
+                        Kernersville, NC 27284<br>
+                        (770) 283 - 0670
+                    </address>
+
+                    @*<ul class="socials">
+                <li><a href="#twitter-link"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#facebook-link"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#dribbble-link"><i class="fa fa-dribbble"></i></a></li>
+                <li><a href="#gplus-link"><i class="fa fa-google-plus"></i></a></li>
+            </ul>*@
+
+                </div>
+
+            @*<form id="contact-form" class="col-sm-7 scrollimation fade-left" action="contact.php" method="post" novalidate>*@
+             <form id="contact-form" class="col-sm-7" action="contact.php" method="post" novalidate>
+
+
+                    <div class="form-group">
+                        <label class="control-label" for="contact-name">Name</label>
+                        <div class="controls">
+                            <i class="fa fa-user"></i>
+                            <input id="contact-name" name="contactName" placeholder="My name is..." class="form-control input-lg requiredField" type="text" data-error-empty="Please enter your name">
+                        </div>
+                    </div><!-- End name input -->
+
+                    <div class="form-group">
+                        <label class="control-label" for="contact-mail">Email</label>
+                        <div class=" controls">
+                            <i class="fa fa-envelope"></i>
+                            <input id="contact-mail" name="email" placeholder="Please respond at..." class="form-control input-lg requiredField" type="email" data-error-empty="Please enter your email" data-error-invalid="Invalid email address">
+                        </div>
+                    </div><!-- End email input -->
+
+                    <div class="form-group">
+                        <label class="control-label" for="contact-message">Message</label>
+                        <div class="controls">
+                            <i class="fa fa-comment"></i>
+                            <textarea id="contact-message" name="comments" placeholder="I wanna talk about..." class="form-control input-lg requiredField" rows="5" data-error-empty="Please enter your message"></textarea>
+                        </div>
+                    </div><!-- End textarea -->
+
+                    <p><button name="submit" type="submit" class="btn btn-theme btn-lg" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Message Sent"><i class="fa fa-paper-plane"></i>Send Message</button></p>
+                    <input type="hidden" name="submitted" id="submitted" value="true" />
+
+                </form><!-- End contact-form -->
+
+        </div><!-- End row -->
+
+    </div><!-- End container -->
+
+</section><!-- End contact section -->
+

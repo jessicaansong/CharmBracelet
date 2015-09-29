@@ -116,7 +116,11 @@ h2 {
 }
 
 .remove-space{
-    ,margin-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.remove-lgspace{
+    margin-bottom: 200px;
 }
 
 .move
@@ -465,7 +469,7 @@ header.jumbotron{
 
 #services{
     background:#fff;
-    color:#999;
+    color:#6a6a6a;
     padding:80px 0;
 }
 

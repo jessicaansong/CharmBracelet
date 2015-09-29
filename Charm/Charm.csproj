@@ -226,6 +226,8 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\ExperienceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -311,6 +313,7 @@
     <Content Include="PortfolioTemplate\HTML\TemplateHTMLFonts\FontAwesome.otf" />
     <Content Include="Metadata\deploymentTemplates\apiappconfig.azureresource.json" />
     <Content Include="apiapp.json" />
+    <Content Include="MyUploads\jessica_ansong_resume.pdf" />
     <None Include="Properties\PublishProfiles\jansong - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\jansong - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\jansong - Web Deploy %282%29.pubxml" />
@@ -370,6 +373,8 @@
     <Content Include="Views\Blog\Edit.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Experience\Index.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
