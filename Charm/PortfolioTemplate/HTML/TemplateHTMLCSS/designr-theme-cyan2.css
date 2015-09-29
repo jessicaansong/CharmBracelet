@@ -571,20 +571,36 @@ header.jumbotron{
 ------About Styles-------
 ------------------------*/
 
-#about {
+/*#about {
     background:#74C7D5;
     color:#fff;
     padding:80px 0;
+}*/
+
+#about {
+    background:#fff;
+    color:#6a6a6a;
+    padding:80px 0;
 }
 
-#about h1 {
+/*#about h1 {
     color:#fff;
     font-size:36px;
     line-height:42px;
     font-weight:300;
     margin-bottom:24px;
     position:relative;
+}*/
+
+#about h1 {
+    color:#6a6a6a;
+    font-size:36px;
+    line-height:42px;
+    font-weight:300;
+    margin-bottom:24px;
+    position:relative;
 }
+
 
 #about p {
     font-size:24px;

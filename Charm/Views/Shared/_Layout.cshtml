@@ -25,7 +25,7 @@
         CSS
         =============================================== -->
     <!--===========ADDED CSS FILES===================-->
-    @Styles.Render("~/Content/css")
+    @Styles.Render("/Content/css")
     <link href="/Content/PagedList.css" rel="stylesheet" type="text/css" />
     <link href="/PortfolioTemplate/HTML/TemplateHTMLCSS/flexslider.css" rel="stylesheet" />
     @*<link href="/PortfolioTemplate/HTML/TemplateHTMLCSS/font-awesome.min.css" rel="stylesheet" />*@
@@ -56,10 +56,8 @@
 
 </head>
 
-<body >
+    <body >
 
-    <!--=== PAGE PRELOADER ===-->
-    @*<div id="page-loader"><span class="page-loader-gif"></span></div>*@
 
     <!-- ==============================================
     MAIN NAV
@@ -91,16 +89,16 @@
                         <a href="#home" class="scrollto">Home</a>
                     </li>
                     <li>
-                        <a href="#services" class="scrollto">My Experience</a>
+                        <a href="http://www.linkedin.com/in/jessicaansong">My Experience</a>
                     </li>
                     <li>
-                        <a href="#about" class="scrollto">About Me</a>
+                        <a href="@Url.Action("About", "Home")">About Me</a>
                     </li>
                     <li>
-                        <a href="#portfolio" class="scrollto">My Works</a>
+                        <a href="http://jansong-jaycarapp.azurewebsites.net">My Works</a>
                     </li>
                     <li>
-                        <a href="#contact" class="scrollto">Contact Me</a>
+                        <a href="mailto:jessica.ansong@gmail.com">Contact</a>
                     </li>
                     <li>
                         <a href="@Url.Action("Index","Blog")">Blog</a>
@@ -112,7 +110,19 @@
 
     </div><!--End main-nav -->
 
-    @RenderBody()
+        <div class=" container body-content">
+
+
+
+            @RenderBody()
+
+
+
+
+
+        </div>
+
+
 
 
 
@@ -120,6 +130,8 @@
     <!-- ==============================================
     FOOTER
     =============================================== -->
+    
+  
     <footer id="main-footer">
 
         <div class="container">
@@ -130,10 +142,10 @@
                     <h1 class="small-logo">Jessica Ansong<br><span>.NET Developer</span></h1>
                     <ul class="footer-nav">
                         @*<li><a class="scrollto" href="#home">Home</a></li>*@
-                        <li><a class="scrollto" href="#services">My Experience</a></li>
-                        <li><a class="scrollto" href="#about">About Me</a></li>
-                        <li><a class="scrollto" href="#portfolio">My Works</a></li>
-                        <li><a class="scrollto" href="#contact">Contact</a></li>
+                        <li><a class="http://linkedin.com/in/jessicaansong">My Experience</a></li>
+                        <li><a  href="http://linkedin.com/in/jessicaansong">About Me</a></li>
+                        <li><a href="http://jansong-jaycarapp.azurewebsites.net">My Works</a></li>
+                        <li><a href="mailto:jessica.ansong@gmail.com">Contact</a></li>
                         <li><a href="@Url.Action("Index", "Blog")">Blog</a></li>
                     </ul>
                     <p>Copyright &copy; 2015 Jessica Ansong. All Rights Reserved.</p>
@@ -212,5 +224,5 @@
     </script>*@
     @RenderSection("scripts", required: false)
 
-</body>
+    </body>
 </html>

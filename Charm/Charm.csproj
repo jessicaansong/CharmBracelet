@@ -223,6 +223,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -241,7 +242,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -250,6 +250,7 @@
     <Content Include="JQueryDotDotDot\Ellipsis.js" />
     <Content Include="JQueryDotDotDot\jquery.dotdotdot.js" />
     <Content Include="MyUploads\car-350x230.jpg" />
+    <Content Include="MyUploads\indexpage code - charm.txt" />
     <Content Include="MyUploads\resized_ProfessionalPhoto.png" />
     <Content Include="PortfolioTemplate\Documentation\Template Doc Assets\theme-preview.jpg" />
     <Content Include="PortfolioTemplate\Documentation\Template Doc CSS\main.css" />
@@ -274,16 +275,7 @@
     <Content Include="PortfolioTemplate\HTML\TemplateHTMLAssets\projects\company-logo.png" />
     <Content Include="PortfolioTemplate\HTML\TemplateHTMLAssets\projects\project-slide.jpg" />
     <Content Include="PortfolioTemplate\HTML\TemplateHTMLAssets\projects\project-thumb.jpg" />
-    <Content Include="PortfolioTemplate\HTML\TemplateHTMLCSS\bootstrap.css" />
-    <Content Include="PortfolioTemplate\HTML\TemplateHTMLCSS\bootstrap.min.css" />
-    <Content Include="PortfolioTemplate\HTML\TemplateHTMLCSS\designr-theme-cyan.css" />
     <Content Include="PortfolioTemplate\HTML\TemplateHTMLCSS\designr-theme-cyan2.css" />
-    <Content Include="PortfolioTemplate\HTML\TemplateHTMLCSS\designr-theme-grass.css" />
-    <Content Include="PortfolioTemplate\HTML\TemplateHTMLCSS\designr-theme-green.css" />
-    <Content Include="PortfolioTemplate\HTML\TemplateHTMLCSS\designr-theme-orange.css" />
-    <Content Include="PortfolioTemplate\HTML\TemplateHTMLCSS\designr-theme-pink.css" />
-    <Content Include="PortfolioTemplate\HTML\TemplateHTMLCSS\designr-theme-purple.css" />
-    <Content Include="PortfolioTemplate\HTML\TemplateHTMLCSS\designr-theme-red.css" />
     <Content Include="PortfolioTemplate\HTML\TemplateHTMLCSS\flexslider.css" />
     <Content Include="PortfolioTemplate\HTML\TemplateHTMLCSS\font-awesome.css" />
     <Content Include="PortfolioTemplate\HTML\TemplateHTMLFonts\fontawesome-webfont.svg" />
@@ -300,7 +292,6 @@
     <Content Include="PortfolioTemplate\HTML\TemplateHTMLJS\jquery.masonry.min.js" />
     <Content Include="PortfolioTemplate\HTML\TemplateHTMLJS\jquery.scrollto.js" />
     <Content Include="PortfolioTemplate\HTML\TemplateHTMLJS\libs\bootstrap.js" />
-    <Content Include="PortfolioTemplate\HTML\TemplateHTMLJS\libs\bootstrap.min.js" />
     <Content Include="PortfolioTemplate\HTML\TemplateHTMLJS\libs\jquery-1.9.1.min.js" />
     <Content Include="PortfolioTemplate\HTML\TemplateHTMLJS\libs\modernizr.min.js" />
     <Content Include="PortfolioTemplate\HTML\TemplateHTMLJS\respond.min.js" />
@@ -313,7 +304,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="PortfolioTemplate\HTML\contact.php" />
     <Content Include="PortfolioTemplate\HTML\TemplateHTMLFonts\fontawesome-webfont.eot" />
     <Content Include="PortfolioTemplate\HTML\TemplateHTMLFonts\fontawesome-webfont.ttf" />
     <Content Include="PortfolioTemplate\HTML\TemplateHTMLFonts\fontawesome-webfont.woff" />
@@ -351,7 +341,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
@@ -380,6 +369,7 @@
     <Content Include="Views\Blog\Details.cshtml" />
     <Content Include="Views\Blog\Edit.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
