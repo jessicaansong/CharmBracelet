@@ -13,5 +13,9 @@ namespace Charm.Controllers
         {
             return View();
         }
+        public ActionResult JavaScriptExercises()
+        {
+            return View();
+        }
     }
 }
