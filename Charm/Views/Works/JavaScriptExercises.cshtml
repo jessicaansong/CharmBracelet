@@ -3,30 +3,56 @@
     ViewBag.Title = "JavaScriptExercises";
 }
 
-<div class="move">
+<div class="move"></div>
 
-</div>
 <div id="portfolio-header" class="text-center">
     <h1 class="section-title"><span>JavaScript </span>Exercises<i class="fa fa-code"></i></h1>
     <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <li><a href="" data-toggle="modal" data-target="#max">Max of Five</a></li>
-                </div>
-                <div class="col-md-6">
-                  <h2>Happy Numbers</h2>
-                </div>
-            </div>
-        </div>
-    </div>
+        <div class="row"> 
 
-<!--Max of Five Modal-->
+            <div class="col-md-4">
+                <h2><a href="" data-toggle="modal" data-target="#max">Max of Five</a></h2>
+                </div><!--/ Max of Five-->
+
+            <div class="col-md-4">
+                <h2><a href="" data-toggle="modal" data-target="#sum">Sum of Five</a></h2>
+              </div><!--/ Sum-->
+
+            <div class="col-md-4">
+                <h2><a href="" data-toggle="modal" data-target="#multiply">Multiply Five</a></h2>
+            </div><!--/ Multiply Five -->
+
+            <div class="row"><!--Second Row-->
+
+                <div class="col-md-4">
+               <h2><a href="" data-toggle="modal" data-target="#factorial">Factorial</a></h2>
+                </div><!-- / Factorial -->
+
+            
+                <div class="col-md-4">
+                        <h2><a href="" data-toggle="modal" data-target="#fizz">FizzBuzz</a></h2>
+                    </div><!-- / FizzBuzz -->
+
+                <div class="col-md-4">
+                    <h2><a href="" data-toggle="modal" data-target="#mean">Mean</a></h2>
+                </div><!-- / Mean -->
+
+
+                </div> <!--/ Second Row-->
+            </div> <!--/ First Row -->
+        </div> <!-- / Container -->
+    </div> <!-- / Portfolio id-->
+
+
+
+
+
+<!--===================================Max of Five Modal=========================================-->
 <div class="modal fade" id="max" tabindex="50" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-
+    <div class="modal-dialog modal-md">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
                 <h1 class="modal-title" id="myModalLabel">Max of Five</h1>
             </div>
             <div class="modal-body col-sm-12">
@@ -40,7 +66,7 @@
                         <br />
                         <div class="row">
                             <div class="col-3-md">
-                        </div>
+                            </div>
                             <div class="col-3-md">
                                 <input type="text" id="n1" />
                             </div>
@@ -56,13 +82,9 @@
                             <div class="col-3-md">
                                 <input type="text" id="n5" />
                             </div>
-                            
-                            
-                            
-                            <button onclick="maxOfFive()">Enter</button>
+                            <button class="btn-theme2" onclick="maxOfFive()">Enter</button>
                             <p id="maxResult"></p>
                         </div>
-
                     </div>
                     <!--Right Column-->
                     <div class="col-sm-6">
@@ -86,11 +108,311 @@
         </div>
     </div>
 </div>
+<!--===================================Max of Five Modal Ends=========================================-->
+
+
+
+
+
+<!--===================================Sum Modal=========================================-->
+<div class="modal fade" id="sum" tabindex="50" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h1 class="modal-title" id="myModalLabel">Sum of Five</h1>
+            </div>
+            <div class="modal-body col-sm-12">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!--Left Column-->
+                        <h3><strong>Description: </strong></h3>
+                        <p>
+                            I designed a program that enables the computer to return sum of five numbers. Enter five numbers in each of the five text boxes below. Press "Enter" and the sum will be displayed.
+                        </p>
+                        <br />
+                        <div class="row">
+                            <div class="col-3-md">
+                        </div>
+                            <div class="col-3-md">
+                                <input type="text" id="num1" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="num2" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="num3" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="num4" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="num5" />
+                            </div>
+                            <button class="btn-theme2" onclick="sumOfFive()">Enter</button>
+                            <p id="sumResult"></p>
+                        </div>
+                    </div>
+                    <!--Right Column-->
+                    <div class="col-sm-6">
+                        <pre class="brush: js text">
+function sumOfFive() {
+var num1 = document.getElementById('num1').value;
+var num2 = document.getElementById('num2').value;
+var num3 = document.getElementById('num3').value;
+var num4 = document.getElementById('num4').value;
+var num5 = document.getElementById('num5').value;
+    
+var sumResult = Number(num1) + Number(num2) + Number(num3) + Number(num4) + Number(num5);
+  
+var onScreen = document.getElementById('sumResult');
+onScreen.innerHTML = "The sum is " + sumResult;
+}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer no-margin">
+            </div>
+        </div>
+    </div>
+</div>
+<!--===================================Sum Modal Ends=========================================-->
+
+
+
+
+
+<!--=================================Multiply Modal=========================================-->
+<div class="modal fade" id="multiply" tabindex="50" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h1 class="modal-title" id="myModalLabel">Multiply Five</h1>
+            </div>
+            <div class="modal-body col-sm-12">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!--Left Column-->
+                        <h3><strong>Description: </strong></h3>
+                        <p>
+                            I designed a program that enables the computer to return the product of five numbers. Enter five numbers in each of the five text boxes below. Press "Enter" and the product will be displayed.
+                        </p>
+                        <br />
+                        <div class="row">
+                            <div class="col-3-md">
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="m1" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="m2" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="m3" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="m4" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="m5" />
+                            </div>
+                            <button class="btn-theme2" onclick="multiplyFive()">Enter</button>
+                            <p id="mResult"></p>
+                        </div>
+                    </div>
+                    <!--Right Column-->
+                    <div class="col-sm-6">
+                        <pre class="brush: js text">
+function multiplyFive() {
+var m1 = document.getElementById('m1').value;
+var m2 = document.getElementById('m2').value;
+var m3 = document.getElementById('m3').value;
+var m4 = document.getElementById('m4').value;
+var m5 = document.getElementById('m5').value;
+var mResult = Number(m1) * Number(m2) * Number(m3) * Number(m4) * Number(m5);
+var onDisplay = document.getElementById('mResult');
+onDisplay.innerHTML = "The product is " + mResult;
+}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer no-margin">
+            </div>
+        </div>
+    </div>
+</div>
+<!--===============================Multiply Modal Ends=========================================-->
+
+
+
+
+
+<!--=================================Factorial Modal=========================================-->
+<div class="modal fade" id="factorial" tabindex="50" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h1 class="modal-title" id="myModalLabel">Factorial</h1>
+            </div>
+            <div class="modal-body col-sm-12">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!--Left Column-->
+                        <h3><strong>Description: </strong></h3>
+                        <p>
+                         Factorial description goes here
+                        </p>
+                        <br />
+                        <div class="row">
+                            <div class="col-3-md">
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="f" />
+                            </div>
+                            
+                            <button class="btn-theme2" onclick="factorial()">Enter</button>
+                            <p id="factResult"></p>
+                        </div>
+                    </div>
+                    <!--Right Column-->
+                    <div class="col-sm-6">
+                        <pre class="brush: js text">
+
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer no-margin">
+            </div>
+        </div>
+    </div>
+</div>
+<!--===============================Factorial Modal Ends=========================================-->
+
+
+
+
+    <!--=================================FizzBuzz Modal=========================================-->
+    <div class="modal fade" id="fizz" tabindex="50" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                    <h1 class="modal-title" id="myModalLabel">FizzBuzz</h1>
+                </div>
+                <div class="modal-body col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <!--Left Column-->
+                            <h3><strong>Description: </strong></h3>
+                            <p>
+                            FizzBuzz Description goes here.
+                            </p>
+                            <br />
+                            <div class="row">
+                                <div class="col-3-md">
+                                </div>
+                                <div class="col-3-md">
+                                    <input type="text" id="fb1" />
+                                </div>
+                                <div class="col-3-md">
+                                    <input type="text" id="fb2" />
+                                </div>
+                                <button class="btn-theme2" onclick="fizzBuzz()">Enter</button>
+                                <p id="statement"></p>
+                              
+                            </div>
+                        </div>
+                        <!--Right Column-->
+                        <div class="col-sm-6">
+                            <pre class="brush: js text">
+fizzbuzz
+                        </pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer no-margin">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--===============================FizzBuzz Modal Ends=========================================-->
+
+
+
+
+  <!--=================================Mean Modal=========================================-->
+<div class="modal fade" id="mean" tabindex="50" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h1 class="modal-title" id="myModalLabel">Mean</h1>
+            </div>
+            <div class="modal-body col-sm-12">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!--Left Column-->
+                        <h3><strong>Description: </strong></h3>
+                        <p>
+                            Mean Description goes here.
+                        </p>
+                        <br />
+                        <div class="row">
+                            <div class="col-3-md">
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="e1" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="e2" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="e3" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="e4" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="e5" />
+                            </div>
+                            <button class="btn-theme2" onclick="mean()">Enter</button>
+                            <p id="eResult2"></p>
+
+                        </div>
+                    </div>
+                    <!--Right Column-->
+                    <div class="col-sm-6">
+                        <pre class="brush: js text">
+mean
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer no-margin">
+            </div>
+        </div>
+    </div>
+</div>
+<!--===============================Mean Modal Ends=========================================-->
+
+
+
+
 
 @section scripts{
 <script src="/Scripts/SyntaxHighlighter/shCore.js"></script>
 <script src="/Scripts/SyntaxHighlighter/shBrushJScript.js"></script>
 <script src="/JavaScriptExamples/max.js"></script>
+<script src="/JavaScriptExamples/sum.js"></script>
+<script src="/JavaScriptExamples/multiply.js"></script>
+<script src="/JavaScriptExamples/factorial.js"></script>
+<script src="/JavaScriptExamples/fizz.js"></script>
+<script src="/JavaScriptExamples/mean.js"></script>
 <script>
     SyntaxHighlighter.all();
     </script>

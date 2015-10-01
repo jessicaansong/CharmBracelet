@@ -267,6 +267,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="JavaScriptExamples\factorial.js" />
+    <Content Include="JavaScriptExamples\fizz.js" />
+    <Content Include="JavaScriptExamples\mean.js" />
+    <Content Include="JavaScriptExamples\multiply.js" />
+    <Content Include="JavaScriptExamples\sum.js" />
     <Content Include="JavaScriptExamples\max.js" />
     <Content Include="JQueryDotDotDot\Ellipsis.js" />
     <Content Include="JQueryDotDotDot\jquery.dotdotdot.js" />
