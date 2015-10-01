@@ -37,6 +37,10 @@
                     <h2><a href="" data-toggle="modal" data-target="#mean">Mean</a></h2>
                 </div><!-- / Mean -->
 
+                <div class="col-md-4">
+                    <h2><a href="" data-toggle="modal" data-target="#min">Min of Five</a></h2>
+                </div><!-- / Min of Five -->
+
 
                 </div> <!--/ Second Row-->
             </div> <!--/ First Row -->
@@ -128,7 +132,7 @@
                         <!--Left Column-->
                         <h3><strong>Description: </strong></h3>
                         <p>
-                            I designed a program that enables the computer to return sum of five numbers. Enter five numbers in each of the five text boxes below. Press "Enter" and the sum will be displayed.
+                            I designed a program that enables the computer to return the sum of five numbers. Enter five numbers in each of the five text boxes below. Press "Enter" and the sum will be displayed.
                         </p>
                         <br />
                         <div class="row">
@@ -264,7 +268,7 @@ onDisplay.innerHTML = "The product is " + mResult;
                         <!--Left Column-->
                         <h3><strong>Description: </strong></h3>
                         <p>
-                         Factorial description goes here
+                         This function is under construction. Please check back soon!
                         </p>
                         <br />
                         <div class="row">
@@ -274,14 +278,14 @@ onDisplay.innerHTML = "The product is " + mResult;
                                 <input type="text" id="f" />
                             </div>
                             
-                            <button class="btn-theme2" onclick="factorial()">Enter</button>
-                            <p id="factResult"></p>
+                            <button class="btn-theme2" onclick="">Enter</button>
+                            <p id=""></p>
                         </div>
                     </div>
                     <!--Right Column-->
                     <div class="col-sm-6">
                         <pre class="brush: js text">
-
+Coming soon!
                         </pre>
                     </div>
                 </div>
@@ -310,7 +314,7 @@ onDisplay.innerHTML = "The product is " + mResult;
                             <!--Left Column-->
                             <h3><strong>Description: </strong></h3>
                             <p>
-                            FizzBuzz Description goes here.
+                                This function is under construction. Please check back soon!
                             </p>
                             <br />
                             <div class="row">
@@ -330,7 +334,7 @@ onDisplay.innerHTML = "The product is " + mResult;
                         <!--Right Column-->
                         <div class="col-sm-6">
                             <pre class="brush: js text">
-fizzbuzz
+Coming soon!
                         </pre>
                         </div>
                     </div>
@@ -345,7 +349,73 @@ fizzbuzz
 
 
 
-  <!--=================================Mean Modal=========================================-->
+
+
+  <!--=================================Min of Five Modal=========================================-->
+<div class="modal fade" id="min" tabindex="50" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h1 class="modal-title" id="myModalLabel">Min of Five</h1>
+            </div>
+            <div class="modal-body col-sm-12">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!--Left Column-->
+                        <h3><strong>Description: </strong></h3>
+                        <p>
+                            I designed a program that allows a user to return the least of five numbers. Enter values in the text boxes below, and the least of the five numbers will appear.
+                        </p>
+                        <br />
+                        <div class="row">
+                            <div class="col-3-md">
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="min1" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="min2" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="min3" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="min4" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="min5" />
+                            </div>
+                            <button class="btn-theme2" onclick="min()">Enter</button>
+                            <p id="minResult"></p>
+
+                        </div>
+                    </div>
+                    <!--Right Column-->
+                    <div class="col-sm-6">
+                        <pre class="brush: js text">
+function min() {
+var min1 = document.getElementById('min1').value;
+var min2 = document.getElementById('min2').value;
+var min3 = document.getElementById('min3').value;
+var min4 = document.getElementById('min4').value
+var min5 = document.getElementById('min5').value;
+var minResult = Math.min(min1, min2, min3, min4, min5);
+var showNow = document.getElementById('minResult')
+showNow.innerHTML = "The mean is " + minResult;
+}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer no-margin">
+            </div>
+        </div>
+    </div>
+</div>
+<!--===============================Min of Five Modal Ends=========================================-->
+
+<!--=================================Mean Modal=========================================-->
 <div class="modal fade" id="mean" tabindex="50" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-md">
         <div class="modal-content">
@@ -359,7 +429,7 @@ fizzbuzz
                         <!--Left Column-->
                         <h3><strong>Description: </strong></h3>
                         <p>
-                            Mean Description goes here.
+                           I have developed a program that returns the average of five numbers. Please insert 5 values in the text boxes below.
                         </p>
                         <br />
                         <div class="row">
@@ -382,13 +452,22 @@ fizzbuzz
                             </div>
                             <button class="btn-theme2" onclick="mean()">Enter</button>
                             <p id="eResult2"></p>
-
                         </div>
                     </div>
                     <!--Right Column-->
                     <div class="col-sm-6">
                         <pre class="brush: js text">
-mean
+function mean() {
+var e1 = document.getElementById('e1').value;
+var e2 = document.getElementById('e2').value;
+var e3 = document.getElementById('e3').value;
+var e4 = document.getElementById('e4').value;
+var e5 = document.getElementById('e5').value;
+var eResult = Number(e1) + Number(e2) + Number(e3) + Number(e4) + Number(e5);
+var eResult2 = eResult / 5;
+var forShow = document.getElementById('eResult2');
+forShow.innerHTML = "The mean is " + eResult2;
+}
                         </pre>
                     </div>
                 </div>
@@ -403,7 +482,6 @@ mean
 
 
 
-
 @section scripts{
 <script src="/Scripts/SyntaxHighlighter/shCore.js"></script>
 <script src="/Scripts/SyntaxHighlighter/shBrushJScript.js"></script>
@@ -413,6 +491,7 @@ mean
 <script src="/JavaScriptExamples/factorial.js"></script>
 <script src="/JavaScriptExamples/fizz.js"></script>
 <script src="/JavaScriptExamples/mean.js"></script>
+<script src="/JavaScriptExamples/min.js"></script>
 <script>
     SyntaxHighlighter.all();
     </script>

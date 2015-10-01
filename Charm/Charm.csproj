@@ -270,6 +270,7 @@
     <Content Include="JavaScriptExamples\factorial.js" />
     <Content Include="JavaScriptExamples\fizz.js" />
     <Content Include="JavaScriptExamples\mean.js" />
+    <Content Include="JavaScriptExamples\min.js" />
     <Content Include="JavaScriptExamples\multiply.js" />
     <Content Include="JavaScriptExamples\sum.js" />
     <Content Include="JavaScriptExamples\max.js" />

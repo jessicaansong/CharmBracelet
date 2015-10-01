@@ -5,9 +5,9 @@
     var e4 = document.getElementById('e4').value;
     var e5 = document.getElementById('e5').value;
 
-    var eResult = Number(e1) + Number(e2) + Number(e3) + Number(e4) + Number(e4) + Number(e5);
+    var eResult = Number(e1) + Number(e2) + Number(e3) + Number(e4) + Number(e5);
 
-    var eResult2 = eResult/5;
+    var eResult2 = eResult / 5;
 
     var forShow = document.getElementById('eResult2');
 
