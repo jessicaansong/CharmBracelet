@@ -29,6 +29,8 @@ namespace Charm.Controllers
             return View(p.OrderByDescending(x => x.Created).ToPagedList(pageNumber, pageSize)); //This command tells it to extract the information from the database.
         }
 
+
+
         // GET: Blog/Details/5
         public ActionResult Details(string slug)
         {
@@ -47,11 +49,22 @@ namespace Charm.Controllers
          
         }
 
+
+
+
+
+
         // GET: Blog/Create
         public ActionResult Create()
         {
+            
             return View();
         }
+
+
+         
+
+
 
         // POST: Blog/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -62,6 +75,7 @@ namespace Charm.Controllers
         {
             if (ModelState.IsValid)
             {
+                blogPost.Created = System.DateTimeOffset.Now;
                 db.Posts.Add(blogPost);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -69,6 +83,9 @@ namespace Charm.Controllers
 
             return View(blogPost);
         }
+
+
+
 
         // GET: Blog/Edit/5
         public ActionResult Edit(int? id)
@@ -82,8 +99,11 @@ namespace Charm.Controllers
             {
                 return HttpNotFound();
             }
-            return View(blogPost);
+            return View();
         }
+
+
+
 
         // POST: Blog/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -94,12 +114,16 @@ namespace Charm.Controllers
         {
             if (ModelState.IsValid)
             {
+                blogPost.Updated = System.DateTimeOffset.Now;
                 db.Entry(blogPost).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(blogPost);
+            return View();
         }
+
+
+
 
         // GET: Blog/Delete/5
         public ActionResult Delete(int? id)

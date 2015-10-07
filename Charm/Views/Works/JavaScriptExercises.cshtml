@@ -268,7 +268,7 @@ onDisplay.innerHTML = "The product is " + mResult;
                         <!--Left Column-->
                         <h3><strong>Description: </strong></h3>
                         <p>
-                         This function is under construction. Please check back soon!
+                         Factorial refers to the product of an integer and all the integers below it. For instance, the factorial of 3 is 6, since 3 x 2 x 1 equals 6. Enter a positive number in the textbox below in order to obtain its factorial.
                         </p>
                         <br />
                         <div class="row">
@@ -278,14 +278,25 @@ onDisplay.innerHTML = "The product is " + mResult;
                                 <input type="text" id="f" />
                             </div>
                             
-                            <button class="btn-theme2" onclick="">Enter</button>
-                            <p id=""></p>
+                            <button class="btn-theme2" onclick="getNumber()">Enter</button>
+                            <p id="factResult"></p>
                         </div>
                     </div>
                     <!--Right Column-->
                     <div class="col-sm-6">
                         <pre class="brush: js text">
-Coming soon!
+function getNumber() {
+var f = document.getElementById('f').value; //The user's input
+var factResult = factorial(f); //Trigger the factorial function, passing the user's input as a parameter
+var toDisplay = document.getElementById('factResult');
+toDisplay.innerHTML = "The factorial is " + factResult;
+}
+function factorial(f) { //Pass the user's number in the function 
+var factResult = 1;
+for (var i = 1; i <= f; i++)
+factResult *= i;
+return factResult;
+}
                         </pre>
                     </div>
                 </div>
