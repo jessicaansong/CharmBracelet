@@ -111,6 +111,10 @@ h2 {
     text-transform:uppercase;
 }
 
+.movetop{
+    margin-top: 80px;
+}
+
 .btwnbyline{
     margin-bottom: 25px;
 }

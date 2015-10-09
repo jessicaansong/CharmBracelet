@@ -19,6 +19,7 @@ namespace Charm.Models
         public Nullable<System.DateTimeOffset> Updated { get; set; }
         public string Title { get; set; }
         public string Slug { get; set; }
+        [AllowHtml]
         public string Blog { get; set; }
         public string MediaUrl { get; set; }
 

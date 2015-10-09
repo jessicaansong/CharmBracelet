@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using Charm.Models;
 using PagedList;
 using PagedList.Mvc;
+using System.IO;
 
 namespace Charm.Controllers
 {
@@ -16,8 +17,10 @@ namespace Charm.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Blog
-        public ActionResult Index(int? page, string Query)
+        ////// GET //////////////
+
+
+        public ActionResult Index(int? page, string Query) 
         {
             int pageSize = 3;
             int pageNumber = (page ?? 1);
@@ -31,7 +34,11 @@ namespace Charm.Controllers
 
 
 
-        // GET: Blog/Details/5
+
+//================== DETAILS  ================================================//
+
+
+        ////// GET //////////////
         public ActionResult Details(string slug)
         {
             if (string.IsNullOrWhiteSpace(slug))
@@ -51,43 +58,97 @@ namespace Charm.Controllers
 
 
 
+//================== DETAILS ENDS ================================================//
 
 
 
-        // GET: Blog/Create
+//================== ADMIN ================================================//
+
+
+        public ActionResult Admin()
+        {
+            return View(db.Posts.ToList()); //Must send your blog posts to a list, so that iEnumerable can accept it
+        }
+
+
+//================== ADMIN ENDS ================================================//
+
+
+
+//================== CREATE ================================================//
+
+        ////// GET //////////////
         public ActionResult Create()
         {
             
             return View();
         }
 
+          
 
-         
+        //////   POST  /////////
 
-
-
-        // POST: Blog/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Created,Updated,Title,Slug,Blog,MediaUrl")] BlogPost blogPost)
+        public ActionResult Create([Bind(Include = "Id,Created,Updated,Title,Slug,Blog,MediaUrl")] BlogPost blogPost, HttpPostedFileBase image)
         {
-            if (ModelState.IsValid)
+
+            if (image != null && image.ContentLength > 0)
             {
-                blogPost.Created = System.DateTimeOffset.Now;
-                db.Posts.Add(blogPost);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                //check the file name to make sure its an image
+                var ext = System.IO.Path.GetExtension(image.FileName).ToLower();
+                if (ext != ".png" && ext != ".jpg" && ext != ".jpeg" && ext != "gif " &&  ext != ".bmp" && ext != ".pdf")
+                    ModelState.AddModelError("image", "Invalid Format");
             }
 
+            if (ModelState.IsValid)
+            {
+                string slug = StringUtilities.UrlFriendly(blogPost.Title); //slug to automatically populate
+                if (String.IsNullOrWhiteSpace(slug))
+                {
+                    ModelState.AddModelError("Title", "Invalid title.");
+                    return View(blogPost);
+                }
+                if (db.Posts.Any(p => p.Slug == slug))
+                {
+                    ModelState.AddModelError("Title", "The title must be unique.");
+                    return View(blogPost);
+                }
+                else
+                {
+                  
+                    blogPost.Slug = slug;
+
+                }
+                    if (image != null)
+                    {
+                        //relative server path
+                        var filePath = "/MyUploads/";
+                        //path on physical drive on server
+                        var absPath = Server.MapPath("~" + filePath);
+                        // media url for relative path
+                        blogPost.MediaUrl = filePath + "/" + image.FileName;
+                        // save image
+                        Directory.CreateDirectory(absPath);
+                        image.SaveAs(Path.Combine(absPath, image.FileName));
+                    }
+
+                    blogPost.Created = System.DateTimeOffset.Now;
+                    db.Posts.Add(blogPost);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             return View(blogPost);
         }
 
+ //================== CREATE ENDS  ===============================================//
 
 
 
-        // GET: Blog/Edit/5
+//================== EDIT  ===============================================//
+
+        //======  GET ==========//
+
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -99,15 +160,12 @@ namespace Charm.Controllers
             {
                 return HttpNotFound();
             }
-            return View();
+            return View(blogPost);
         }
 
 
 
-
-        // POST: Blog/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //////   POST  /////////
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Created,Updated,Title,Slug,Blog,MediaUrl")] BlogPost blogPost)
@@ -122,10 +180,13 @@ namespace Charm.Controllers
             return View();
         }
 
+ //================== EDIT ENDS===============================================/
 
 
 
-        // GET: Blog/Delete/5
+//================== DELETE ===============================================/
+
+        //////   GET  /////////
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -140,7 +201,7 @@ namespace Charm.Controllers
             return View(blogPost);
         }
 
-        // POST: Blog/Delete/5
+        //////   POST  /////////
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -161,3 +222,6 @@ namespace Charm.Controllers
         }
     }
 }
+
+
+//================== DELETE ENDS===============================================/

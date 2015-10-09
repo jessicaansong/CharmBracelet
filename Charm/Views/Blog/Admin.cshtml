@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Charm.Models.BlogPost>
+
+@{
+    ViewBag.Title = "Admin";
+}
+
+
+
+<div class="container body-content">
+    <section id="services">
+        <div class="container">
+            <h1 class="section-title"><span>Dashboard</span></h1>
+             <button type="button" class="btn-theme2" onclick="location.href='@Url.Action("Create", "Blog")'">Create</button>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Title)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MediaUrl)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Slug)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Created)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    { 
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(model=> item.Title)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem=> item.MediaUrl)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Slug)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem=>item.Created)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div><!--/ Container -->
+    </section><!--/ Section -->
+</div><!--/ Containter Body-Content-->
