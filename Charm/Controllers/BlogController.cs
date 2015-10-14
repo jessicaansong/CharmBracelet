@@ -10,6 +10,7 @@ using Charm.Models;
 using PagedList;
 using PagedList.Mvc;
 using System.IO;
+using Microsoft.AspNet.Identity;
 
 namespace Charm.Controllers
 {
@@ -20,7 +21,7 @@ namespace Charm.Controllers
         ////// GET //////////////
 
 
-        public ActionResult Index(int? page, string Query) 
+        public ActionResult Index(int? page, string Query)
         {
             int pageSize = 3;
             int pageNumber = (page ?? 1);
@@ -35,7 +36,7 @@ namespace Charm.Controllers
 
 
 
-//================== DETAILS  ================================================//
+        //================== DETAILS  ================================================//
 
 
         ////// GET //////////////
@@ -45,24 +46,24 @@ namespace Charm.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BlogPost blogPost = db.Posts.FirstOrDefault(p=> p.Slug == slug);
+            BlogPost blogPost = db.Posts.FirstOrDefault(p => p.Slug == slug);
             ViewBag.PostList = db.Posts.ToList();
 
             if (blogPost == null)
             {
                 return HttpNotFound();
             }
-         return View(blogPost);
-         
+            return View(blogPost);
+
         }
 
 
 
-//================== DETAILS ENDS ================================================//
+        //================== DETAILS ENDS ===========================================//
 
 
 
-//================== ADMIN ================================================//
+        //================== ADMIN ================================================//
 
 
         public ActionResult Admin()
@@ -71,20 +72,22 @@ namespace Charm.Controllers
         }
 
 
-//================== ADMIN ENDS ================================================//
+        //================== ADMIN ENDS ================================================//
 
 
 
-//================== CREATE ================================================//
+
+        //================== CREATE ================================================//
 
         ////// GET //////////////
+        [Authorize(Roles = ("Admin"))]
         public ActionResult Create()
         {
-            
+
             return View();
         }
 
-          
+
 
         //////   POST  /////////
 
@@ -97,7 +100,7 @@ namespace Charm.Controllers
             {
                 //check the file name to make sure its an image
                 var ext = System.IO.Path.GetExtension(image.FileName).ToLower();
-                if (ext != ".png" && ext != ".jpg" && ext != ".jpeg" && ext != "gif " &&  ext != ".bmp" && ext != ".pdf")
+                if (ext != ".png" && ext != ".jpg" && ext != ".jpeg" && ext != "gif " && ext != ".bmp" && ext != ".pdf")
                     ModelState.AddModelError("image", "Invalid Format");
             }
 
@@ -116,36 +119,37 @@ namespace Charm.Controllers
                 }
                 else
                 {
-                  
+
                     blogPost.Slug = slug;
 
                 }
-                    if (image != null)
-                    {
-                        //relative server path
-                        var filePath = "/MyUploads/";
-                        //path on physical drive on server
-                        var absPath = Server.MapPath("~" + filePath);
-                        // media url for relative path
-                        blogPost.MediaUrl = filePath + "/" + image.FileName;
-                        // save image
-                        Directory.CreateDirectory(absPath);
-                        image.SaveAs(Path.Combine(absPath, image.FileName));
-                    }
-
-                    blogPost.Created = System.DateTimeOffset.Now;
-                    db.Posts.Add(blogPost);
-                    db.SaveChanges();
-                    return RedirectToAction("Index");
+                if (image != null)
+                {
+                    //relative server path
+                    var filePath = "/MyUploads/";
+                    //path on physical drive on server
+                    var absPath = Server.MapPath("~" + filePath);
+                    // media url for relative path
+                    blogPost.MediaUrl = filePath + "/" + image.FileName;
+                    // save image
+                    Directory.CreateDirectory(absPath);
+                    image.SaveAs(Path.Combine(absPath, image.FileName));
                 }
+
+                blogPost.Created = System.DateTimeOffset.Now;
+                db.Posts.Add(blogPost);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
             return View(blogPost);
         }
 
- //================== CREATE ENDS  ===============================================//
+
+        //================== CREATE ENDS  ===============================================//
 
 
 
-//================== EDIT  ===============================================//
+        //================== EDIT  ===============================================//
 
         //======  GET ==========//
 
@@ -180,11 +184,11 @@ namespace Charm.Controllers
             return View();
         }
 
- //================== EDIT ENDS===============================================/
+        //================== EDIT ENDS===============================================/
 
 
 
-//================== DELETE ===============================================/
+        //================== DELETE ===============================================/
 
         //////   GET  /////////
         public ActionResult Delete(int? id)
@@ -224,4 +228,36 @@ namespace Charm.Controllers
 }
 
 
-//================== DELETE ENDS===============================================/
+
+
+        //================== DELETE ENDS===============================================//
+
+
+        //================== COMMENT ============================================//
+
+        //===CREATE COMMENT ============================================//
+
+
+        //////////// P O S T /////////////
+
+        
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult CreateComment([Bind(Include ="PostId,Body")]
+        //{
+        //    var post = db.Posts.Find(comment.PostId);
+        //    if (post == null)
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        
+        //    if (ModelState.IsValid)
+        //    {
+        //        comment.Created = DateTimeOffset.Now;
+        //        comment.AuthorId = User.Identity.GetUserId();
+
+        //        db.Comments.Add(comment);
+        //        db.SaveChanges();
+        //    }
+        //    return RedirectToAction("Details", new { slug = post.Slug });
+        //}
+
+    
